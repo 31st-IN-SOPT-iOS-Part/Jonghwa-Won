@@ -98,15 +98,6 @@ class FirstVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        //view.addSubview(bigLabel)
-        //view.addSubview(smallLabel)
-        //view.addSubview(emailTextField)
-        //view.addSubview(passwordTextField)
-        //view.addSubview(emailUnderLine)
-        //view.addSubview(passwordUnderLine)
-        //view.addSubview(loginButton)
-        //view.addSubview(signupButton)
-        //view.addSubview(findLabel)
         
        let components: [Any] = [bigLabel, smallLabel, emailUnderLine, passwordUnderLine, emailTextField, passwordTextField, loginButton, signupButton, findLabel]
         components.forEach{
