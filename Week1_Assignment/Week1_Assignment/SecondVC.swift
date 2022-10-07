@@ -68,6 +68,7 @@ class SecondVC: UIViewController {
         button.layer.cornerRadius = 5
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         button.addTarget(self, action: #selector(touchUpSignupButton), for: .touchUpInside)
+        
         return button
     }()
     
@@ -87,6 +88,7 @@ class SecondVC: UIViewController {
 
     
     
+    
     private func presentToThirdVC(){
         let thirdVC = ThirdVC()
         thirdVC.modalPresentationStyle = .fullScreen
@@ -101,10 +103,15 @@ class SecondVC: UIViewController {
         self.present(thirdVC, animated: true)
     }
 
+    private func popToFirstVC(){
+        
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @objc
     private func touchUpSignupButton(){
         presentToThirdVC()
+        popToFirstVC()
     }
     
 }
