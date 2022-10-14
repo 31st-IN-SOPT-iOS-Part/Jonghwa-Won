@@ -11,7 +11,7 @@ class ThirdVC: UIViewController {
     
     
     private let welcomeLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 50, y: 180, width: 300, height: 300))
+        let label = UILabel()
         label.numberOfLines = 2
         label.text = "OOO님 \n 환영합니다"
         label.textAlignment = .center
@@ -21,8 +21,8 @@ class ThirdVC: UIViewController {
         return label
     }()
     
-    private let okButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 30, y: 510, width: 320, height: 40))
+    private lazy var okButton: UIButton = {
+        let button = UIButton()
         button.setTitle("확인", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .systemYellow
@@ -39,6 +39,7 @@ class ThirdVC: UIViewController {
         view.addSubview(welcomeLabel)
         view.addSubview(okButton)
         
+        setLayout()
     }
     
     func dataBind(answer: String){
@@ -55,5 +56,21 @@ class ThirdVC: UIViewController {
             self.navigationController?.popViewController(animated: true)
         }
  
+    }
+}
+
+extension ThirdVC {
+    private func setLayout() {
+      
+        welcomeLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(197)
+            make.leading.trailing.equalTo(self.view.safeAreaLayoutGuide).inset(144)
+        }
+        
+        okButton.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(374)
+            make.leading.trailing.equalTo(self.view.safeAreaLayoutGuide).inset(21)
+            make.height.equalTo(44)
+        }
     }
 }

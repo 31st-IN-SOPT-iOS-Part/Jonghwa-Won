@@ -9,16 +9,17 @@ import UIKit
 
 class SecondVC: UIViewController {
 
-        private let bigLabel: UILabel = {
-            let label = UILabel(frame: CGRect(x: 90, y: 120, width: 250, height: 30))
-            label.text = "카카오톡을 시작합니다"
-            label.textColor = .black
-            label.font = .boldSystemFont(ofSize: 24)
-            return label
-        }()
+    private let bigLabel: UILabel = {
+        let label = UILabel()
+        label.text = "카카오톡을 시작합니다"
+        label.textAlignment = .center
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 22)
+        return label
+    }()
     
     private let emailTextField: UITextField = {
-        let TextField = UITextField(frame: CGRect(x: 30, y: 300, width: 300, height: 30))
+        let TextField = UITextField()
         TextField.backgroundColor = .white
         TextField.placeholder = "이메일 또는 전화번호"
         return TextField
@@ -26,7 +27,7 @@ class SecondVC: UIViewController {
     
     
     private let passwordTextField: UITextField = {
-        let TextField = UITextField(frame: CGRect(x: 30, y: 360, width: 300, height: 30))
+        let TextField = UITextField()
         TextField.backgroundColor = .white
         TextField.placeholder = "비밀번호"
         TextField.isSecureTextEntry = true
@@ -34,41 +35,39 @@ class SecondVC: UIViewController {
     }()
     
     private let passwordCheckTextField: UITextField = {
-        let TextField = UITextField(frame: CGRect(x: 30, y: 420, width: 300, height: 30))
+        let TextField = UITextField()
         TextField.backgroundColor = .white
         TextField.placeholder = "비밀번호 확인"
         TextField.isSecureTextEntry = true
         return TextField
     }()
     
-    
     private let emailUnderLine: UIView = {
-        let view = UIView(frame: CGRect(x: 28, y: 340, width: 320, height: 1))
+        let view = UIView()
         view.backgroundColor = .systemGray2
         return view
     }()
     
     private let passwordUnderLine: UIView = {
-        let view = UIView(frame: CGRect(x: 28, y: 400, width: 320, height: 1))
+        let view = UIView()
         view.backgroundColor = .systemGray2
         return view
     }()
     
     private let passwordCheckUnderLine: UIView = {
-        let view = UIView(frame: CGRect(x: 28, y: 460, width: 320, height: 1))
+        let view = UIView()
         view.backgroundColor = .systemGray2
         return view
     }()
     
-    private let signupButton: UIButton = {
-       let button = UIButton(frame: CGRect(x: 30, y: 510, width: 320, height: 40))
+    private lazy var signupButton: UIButton = {
+        let button = UIButton()
         button.setTitle("새로운 카카오계정 만들기", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .systemGray6
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = 3
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        button.addTarget(self, action: #selector(touchUpSignupButton), for: .touchUpInside)
-        
+        button.addTarget(self, action: #selector(touchUpSigninButton), for: .touchUpInside)
         return button
     }()
     
@@ -84,6 +83,8 @@ class SecondVC: UIViewController {
             view.addSubview(passwordCheckTextField)
             view.addSubview(passwordCheckUnderLine)
             view.addSubview(signupButton)
+            
+            setLayout()
         }
 
     
@@ -109,10 +110,62 @@ class SecondVC: UIViewController {
     }
     
     @objc
-    private func touchUpSignupButton(){
+    private func touchUpSigninButton(){
         presentToThirdVC()
         popToFirstVC()
     }
-    
 }
 
+extension SecondVC {
+    private func setLayout() {
+        
+        bigLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(40)
+            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(89)
+            make.trailing.equalTo(self.view.safeAreaLayoutGuide).offset(-89)
+            make.height.equalTo(22)
+        }
+        
+        emailTextField.snp.makeConstraints { make in
+            make.top.equalTo(self.bigLabel.snp.bottom).offset(116)
+            make.leading.trailing.equalTo(self.view.safeAreaLayoutGuide).inset(21)
+            make.height.equalTo(48)
+        }
+        
+        emailUnderLine.snp.makeConstraints { make in
+            make.top.equalTo(self.emailTextField.snp.bottom)
+            make.leading.trailing.equalTo(self.emailTextField)
+            make.height.equalTo(1)
+        }
+        
+        passwordTextField.snp.makeConstraints { make in
+            make.top.equalTo(self.emailUnderLine.snp.bottom).offset(10)
+            make.leading.trailing.equalTo(self.emailTextField)
+            make.height.equalTo(48)
+        }
+        
+        passwordUnderLine.snp.makeConstraints { make in
+            make.top.equalTo(self.passwordTextField.snp.bottom)
+            make.leading.trailing.equalTo(self.emailTextField)
+            make.height.equalTo(1)
+        }
+        
+        passwordCheckTextField.snp.makeConstraints { make in
+            make.top.equalTo(self.passwordUnderLine.snp.bottom).offset(10)
+            make.leading.trailing.equalTo(self.emailTextField)
+            make.height.equalTo(48)
+        }
+        
+        passwordCheckUnderLine.snp.makeConstraints { make in
+            make.top.equalTo(self.passwordCheckTextField.snp.bottom)
+            make.leading.trailing.equalTo(self.emailTextField)
+            make.height.equalTo(1)
+        }
+        
+        signupButton.snp.makeConstraints { make in
+            make.top.equalTo(self.passwordCheckUnderLine.snp.bottom).offset(26)
+            make.leading.trailing.equalTo(self.emailTextField)
+            make.height.equalTo(44)
+        }
+    }
+}
