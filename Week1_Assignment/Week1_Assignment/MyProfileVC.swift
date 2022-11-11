@@ -33,6 +33,7 @@ class MyProfileVC: UIViewController {
     private let profileTalkImage: UIImageView = {
        let image = UIImageView()
         image.image = UIImage(named: "profileTalkImg")
+        image.contentMode = .scaleAspectFit
         return image
     }()
     
@@ -48,13 +49,15 @@ class MyProfileVC: UIViewController {
        let stack = UIStackView()
         stack.axis = .vertical
         stack.alignment = .center
-        stack.spacing = 8.4
+        stack.spacing = 10
         return stack
     }()
     
     private let profileEditImage: UIImageView = {
        let image = UIImageView()
         image.image = UIImage(named: "profileEditImg")
+        image.contentMode = .scaleAspectFit
+
         return image
     }()
     
@@ -70,13 +73,15 @@ class MyProfileVC: UIViewController {
        let stack = UIStackView()
         stack.axis = .vertical
         stack.alignment = .center
-        stack.spacing = 9.7
+        stack.spacing = 10
         return stack
     }()
     
     private let profileStoryImage: UIImageView = {
        let image = UIImageView()
         image.image = UIImage(named: "profileStoryImg")
+        image.contentMode = .scaleAspectFit
+
         return image
     }()
     
@@ -92,7 +97,7 @@ class MyProfileVC: UIViewController {
        let stack = UIStackView()
         stack.axis = .vertical
         stack.alignment = .center
-        stack.spacing = 6.4
+        stack.spacing = 10
         return stack
     }()
  
@@ -150,8 +155,10 @@ extension MyProfileVC {
         }
         
         profileTalkImage.snp.makeConstraints { make in
-            make.width.equalTo(19)
-            make.height.equalTo(18)
+            make.top.equalTo(self.lineView.snp.bottom).offset(36)
+            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(83)
+            make.width.equalTo(20)
+            make.height.equalTo(20)
         }
         
         profileTalkLabel.snp.makeConstraints { make in
@@ -165,8 +172,10 @@ extension MyProfileVC {
         }
         
         profileEditImage.snp.makeConstraints { make in
-            make.width.equalTo(18)
-            make.height.equalTo(19)
+            make.top.equalTo(self.lineView.snp.bottom).offset(36)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(20)
+            make.height.equalTo(20)
         }
         
         profileEditLabel.snp.makeConstraints { make in
@@ -181,8 +190,9 @@ extension MyProfileVC {
         }
 
         profileStoryImage.snp.makeConstraints { make in
-            make.width.equalTo(18)
-            make.height.equalTo(21)
+            make.top.equalTo(self.lineView.snp.bottom).offset(36)
+            make.width.equalTo(20)
+            make.height.equalTo(20)
         }
         
         profileStoryLabel.snp.makeConstraints { make in
