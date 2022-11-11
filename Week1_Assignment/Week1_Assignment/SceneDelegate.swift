@@ -25,6 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 
                 let rootVC = FriendListVC()
                 let navigationController = UINavigationController(rootViewController: rootVC)
+                navigationController.isNavigationBarHidden = true
             
                 
                 window.rootViewController = navigationController

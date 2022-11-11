@@ -27,6 +27,7 @@ class FriendListVC: UIViewController {
     private lazy var profileButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .clear
+        button.addTarget(self, action: #selector(touchButton), for: .touchUpInside)
         return button
     }()
 
@@ -62,7 +63,7 @@ extension FriendListVC {
         }
         
         settingButton.snp.makeConstraints { make in
-            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(13)
+            make.centerY.equalTo(friendLabel)
             make.leading.equalTo(self.friendLabel.snp.trailing).offset(4)
             make.height.width.equalTo(21)
         }
@@ -82,4 +83,16 @@ extension FriendListVC {
     private func setProfileButton() {
         profileButton.setBackgroundImage(UIImage(named: "profileImg"), for: .normal)
     }
+    
+    private func presentToMyProfileVC() {
+        let myprofileVC = MyProfileVC()
+        myprofileVC.modalPresentationStyle = .fullScreen
+        self.present(myprofileVC, animated: true, completion: nil)
+    }
+    
+    @objc
+    private func touchButton(){
+        presentToMyProfileVC()
+    }
+
 }

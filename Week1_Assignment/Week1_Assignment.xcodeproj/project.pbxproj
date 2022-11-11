@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A32032872918FC47006A4B31 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = A32032862918FC47006A4B31 /* Moya */; };
+		A320328A2918FD5D006A4B31 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = A32032892918FD5D006A4B31 /* Then */; };
+		A320328D2918FD6B006A4B31 /* SwiftyColor in Frameworks */ = {isa = PBXBuildFile; productRef = A320328C2918FD6B006A4B31 /* SwiftyColor */; };
 		A391271D28EF5D9F004AC346 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391271C28EF5D9F004AC346 /* AppDelegate.swift */; };
 		A391271F28EF5D9F004AC346 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391271E28EF5D9F004AC346 /* SceneDelegate.swift */; };
 		A391272128EF5D9F004AC346 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391272028EF5D9F004AC346 /* FirstVC.swift */; };
@@ -17,6 +20,7 @@
 		A391273328EF850D004AC346 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A391273228EF850D004AC346 /* ThirdVC.swift */; };
 		A39AD19028F9C48200C9573F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A39AD18F28F9C48200C9573F /* SnapKit */; };
 		A39AD19228F9D91F00C9573F /* FriendListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39AD19128F9D91F00C9573F /* FriendListVC.swift */; };
+		A39AD19428FA619B00C9573F /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39AD19328FA619B00C9573F /* MyProfileVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,7 @@
 		A391273028EF7D8C004AC346 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		A391273228EF850D004AC346 /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
 		A39AD19128F9D91F00C9573F /* FriendListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListVC.swift; sourceTree = "<group>"; };
+		A39AD19328FA619B00C9573F /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +43,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A320328D2918FD6B006A4B31 /* SwiftyColor in Frameworks */,
+				A32032872918FC47006A4B31 /* Moya in Frameworks */,
+				A320328A2918FD5D006A4B31 /* Then in Frameworks */,
 				A39AD19028F9C48200C9573F /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +78,7 @@
 				A391273028EF7D8C004AC346 /* SecondVC.swift */,
 				A391273228EF850D004AC346 /* ThirdVC.swift */,
 				A39AD19128F9D91F00C9573F /* FriendListVC.swift */,
+				A39AD19328FA619B00C9573F /* MyProfileVC.swift */,
 				A391272228EF5D9F004AC346 /* Main.storyboard */,
 				A391272528EF5DA0004AC346 /* Assets.xcassets */,
 				A391272728EF5DA0004AC346 /* LaunchScreen.storyboard */,
@@ -96,6 +105,9 @@
 			name = Week1_Assignment;
 			packageProductDependencies = (
 				A39AD18F28F9C48200C9573F /* SnapKit */,
+				A32032862918FC47006A4B31 /* Moya */,
+				A32032892918FD5D006A4B31 /* Then */,
+				A320328C2918FD6B006A4B31 /* SwiftyColor */,
 			);
 			productName = Week1_Assignment;
 			productReference = A391271928EF5D9F004AC346 /* Week1_Assignment.app */;
@@ -127,6 +139,9 @@
 			mainGroup = A391271028EF5D9F004AC346;
 			packageReferences = (
 				A39AD18E28F9C48200C9573F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A32032852918FC47006A4B31 /* XCRemoteSwiftPackageReference "Moya" */,
+				A32032882918FD5D006A4B31 /* XCRemoteSwiftPackageReference "Then" */,
+				A320328B2918FD6B006A4B31 /* XCRemoteSwiftPackageReference "SwiftyColor" */,
 			);
 			productRefGroup = A391271A28EF5D9F004AC346 /* Products */;
 			projectDirPath = "";
@@ -158,6 +173,7 @@
 				A391272128EF5D9F004AC346 /* FirstVC.swift in Sources */,
 				A391271D28EF5D9F004AC346 /* AppDelegate.swift in Sources */,
 				A39AD19228F9D91F00C9573F /* FriendListVC.swift in Sources */,
+				A39AD19428FA619B00C9573F /* MyProfileVC.swift in Sources */,
 				A391273128EF7D8D004AC346 /* SecondVC.swift in Sources */,
 				A391271F28EF5D9F004AC346 /* SceneDelegate.swift in Sources */,
 				A391273328EF850D004AC346 /* ThirdVC.swift in Sources */,
@@ -380,6 +396,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A32032852918FC47006A4B31 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+		A32032882918FD5D006A4B31 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		A320328B2918FD6B006A4B31 /* XCRemoteSwiftPackageReference "SwiftyColor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/SwiftyColor";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		A39AD18E28F9C48200C9573F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -391,6 +431,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A32032862918FC47006A4B31 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A32032852918FC47006A4B31 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		A32032892918FD5D006A4B31 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A32032882918FD5D006A4B31 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		A320328C2918FD6B006A4B31 /* SwiftyColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A320328B2918FD6B006A4B31 /* XCRemoteSwiftPackageReference "SwiftyColor" */;
+			productName = SwiftyColor;
+		};
 		A39AD18F28F9C48200C9573F /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A39AD18E28F9C48200C9573F /* XCRemoteSwiftPackageReference "SnapKit" */;
